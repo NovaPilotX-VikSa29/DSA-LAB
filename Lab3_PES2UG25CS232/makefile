@@ -1,7 +1,9 @@
-client.exe : client1.o stack.o
-	gcc client1.o stack.o -o client.exe 
-client1.o : client1.c stack.h 
-	gcc -Wall -c client1.c 
+# for task 1 change to client1.o/.c everywhere
+
+test.exe : client_infi.o stack.o 
+	gcc client_infi.o stack.o -o test.exe 
+client_infi.o : client_infi.c stack.h
+	gcc -Wall -c client_infi.c 
 stack.o : stack.c stack.h 
 	gcc -Wall -c stack.c 
 	
