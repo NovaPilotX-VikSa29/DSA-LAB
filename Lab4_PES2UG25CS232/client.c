@@ -53,6 +53,8 @@ int main()
 	init_poly(&mypolyF);
 
     add_poly(&mypolyF, &mypoly, &mypoly2);
+
+	printf("\n\nFinal Polynomial after addition: \n");
     disp(&mypolyF);
 
 }
