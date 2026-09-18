@@ -1,0 +1,11 @@
+client2.exe : client2.o queue.o deque.o
+	gcc client2.o queue.o deque.o -o client2.exe 
+	
+client2.o : client2.c queue.h 
+	gcc -Wall -c client2.c 
+
+queue.o : queue.c queue.h 
+	gcc -Wall -c queue.c
+
+deque.o : deque.c deque.h 
+	gcc -Wall -c deque.c
