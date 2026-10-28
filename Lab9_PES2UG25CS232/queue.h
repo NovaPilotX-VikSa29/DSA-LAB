@@ -1,22 +1,23 @@
 #ifndef QUEUE_H
 #define QUEUE_H
+#include "tree.h"
 
-struct node_s {
-    int key_;
-    struct node_s* next_;
+#define MAXSIZE 5
+struct queue
+{
+	node_t* key_[MAXSIZE];
+	// indices
+	int count_;
+	int front_;
+	int rear_;
 };
-typedef struct node_s node_t;
+typedef struct queue queue_t;
 
-struct queue_s {
-    node_t *front_;
-    node_t *rear_;
-};
-typedef struct queue_s queue_t;
+void init_q(queue_t *ptr_queue);
+void deinit_q(queue_t *ptr_queue);
+void enqueue(queue_t *ptr_queue, node_t* key);
+node_t* dequeue(queue_t *ptr_queue);
 
-void init_queue(queue_t *ptr_queue);
-void deinit_queue(queue_t *ptr_queue);
-void enqueue(queue_t *ptr_queue, int key);
-int dequeue(queue_t *ptr_queue);
 int is_empty(queue_t *ptr_queue);
 int is_full(queue_t *ptr_queue);
 
